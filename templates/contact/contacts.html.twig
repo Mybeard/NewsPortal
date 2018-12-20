@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}News Portal - Contacts {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Contacts
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="tel:+380509999999">+38 (050) 999-99-99</a></li>
+                        <li class="list-group-item"><a href="mailto:news@example.com">news@example.com</a></li>
+                        <li class="list-group-item">Kyiv, Random str. 1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">Use this form for your feedback:</div>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+
+                {% if formSuccess %}
+                    <div class="alert alert-success col-sm-3" role="alert">
+                        Thank you for contacting us!
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
